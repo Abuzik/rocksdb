@@ -73,7 +73,7 @@ class MergeOperator : public Customizable {
   // internal corruption. This will be treated as an error by the library.
   //
   // Also make use of the *logger for error messages.
-  virtual bool FullMerge(const Slice& /*key*/, const Slice* /*existing_value*/,
+  [[deprecated("please use FullMergeV2()")]] virtual bool FullMerge(const Slice& /*key*/, const Slice* /*existing_value*/,
                          const std::deque<std::string>& /*operand_list*/,
                          std::string* /*new_value*/, Logger* /*logger*/) const {
     // deprecated, please use FullMergeV2()
